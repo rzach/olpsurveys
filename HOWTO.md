@@ -1,6 +1,3 @@
-% Using R to Analyze and Plot Survey Responses
-% Richard Zach
-
 # Using R to Analyze and Plot Survey Responses
 
 As part of two [Taylor Institute](http://ucalgary.ca/taylorinstitute/)
@@ -9,54 +6,61 @@ Calgary's Logic I and Logic II courses. In the case of Logic I, we
 also experimented with partially flipping the course.  One of the
 requirements of the grants was to evaluate the effectiveness of the
 materials and interventions.  To evaluate the textbooks, we ran a
-survey in the courses using the textbooks, and in a number of other
-courss that used commercial textbooks. These surveys were administered
+[survey](https://github.com/rzach/olpsurveys/blob/master/instruments/textbook-survey.pdf)
+in the courses using the textbooks, and in a number of other
+courses that used commercial textbooks. These surveys were administered
 through SurveyMonkey. To evaluate the teaching interventions, we
-desiged a special course evaluation instrument that included a number
+desiged a special 
+[course evaluation instrument](https://github.com/rzach/olpsurveys/blob/master/instruments/teaching-eval-form.pdf) 
+that included a number
 of general questions with Likert responses. The evaluation was done on
 paper, and the responses to the Likert questions were entered into a
 spreadsheet.
 
-In order to generate nice plots of the results, we used R. This
+In order to generate nice plots of the results, we use R. This
 documents the steps taken to do this.
 
 ## Installing R, RStudio, and `likert`
 
 We're running RStudio, a free GUI frontend to R. In order to install R
 on Ubuntu Linux, we followed the instructions
-[here](https://www.r-bloggers.com/how-to-install-r-on-linux-ubuntu-16-04-xenial-xerus/), updated for zesty:
+[here](https://www.r-bloggers.com/how-to-install-r-on-linux-ubuntu-16-04-xenial-xerus/), 
+updated for zesty:
 
 - Start "Software & Updates", select add a source, enter the line
-```
-http://cran.rstudio.com/bin/linux/ubuntu zesty/
-```
-Then in the command line:
-```
-$ sudo apt-get install r-base r-base-dev
-```
-We then installed RStudio using the package provided
-[here](https://www.rstudio.com/products/rstudio/download2/).  The R
-packages for analyzing Likert data and plotting them require
-`devtools`, which we installed following the instructions
-[here](https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using-devtools-on-ubuntu-16-04):
+  ```
+  http://cran.rstudio.com/bin/linux/ubuntu zesty/
+  ```
+  Then in the command line:
+  ```
+  $ sudo apt-get install r-base r-base-dev
+  ```
 
-```
-$ sudo apt-get install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
-$ R
-> install.packages('devtools')
-```
-Now you can install the [`likert`
-package](http://jason.bryer.org/likert/) from
-[Github](https://github.com/jbryer/likert):
-```
-> install_github('likert', 'jbryer')
-```
+- We then installed RStudio using the package provided
+  [here](https://www.rstudio.com/products/rstudio/download2/).  The R
+  packages for analyzing Likert data and plotting them require
+  `devtools`, which we installed following the instructions
+  [here](https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using-devtools-on-ubuntu-16-04):
+  ```
+  $ sudo apt-get install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
+  $ R
+  > install.packages('devtools')
+  ```
+
+- Now you can install the [`likert`
+  package](http://jason.bryer.org/likert/) from
+  [Github](https://github.com/jbryer/likert):
+  ```
+  > install_github('likert', 'jbryer')
+  ```
 
 ## Preparing the data
 
-The source data comes in CSV files, `teachingevals.csv` for the
-teaching evaluation responses, and `textbooksurvey.csv` for the
-textbook survey responses.
+The source data comes in CSV files, 
+[`teachingevals.csv`](https://github.com/rzach/olpsurveys/blob/master/teachingeval.csv) 
+for the teaching evaluation responses, and 
+[`textbooksurvey.csv`](https://github.com/rzach/olpsurveys/blob/master/textbooksurvey.csv)
+for the textbook survey responses.
 
 Since we entered the teaching evaluation responses manually, it was
 relatively simple to provide them in a format usable by R. Columns are
@@ -67,7 +71,9 @@ nine Likert questions. For each question, a response of one of
 Disagree` is recorded.
 
 For the textbook survey we collected a whole lot of responses more,
-and the data SurveyMonkey provided came in a format not directly
+and the 
+[data SurveyMonkey provided](https://github.com/rzach/olpsurveys/blob/master/surveymonkey-results-sample.csv)
+came in a format not directly
 usable by R. We converted it to a more suitable format by hand.
 
 - SurveyMonkey results have two header lines, the first being the
@@ -95,7 +101,12 @@ usable by R. We converted it to a more suitable format by hand.
   course it is (`PHIL279` for Logic I, `PHIL379` for Logic II), `Term`
   for Fall or Winter term, `Open` to distinguish responses from
   sections using an open or a commercial text, and `Text` for the
-  textbook used. This was done by combining multiple individual
+  textbook used. Text is one of `SLC` (for 
+  [_Sets, Logic, Computation_](https://github.com/rzach/phil379), 
+  `BBJ` (for Boolos, Burgess, and Jeffrey, _Computability and Logic_), 
+  `ForallX` (for [_forall x: Calgary Remix_](https://github.com/rzach/forallx-yyc), 
+  `Chellas` (for Chellas, _Elementary Formal Logic_), or `Goldfarb` 
+  (for Goldfarb, _Deductive Logic_). This was done by combining multiple individual
   spreadsheets provided by SurveyMonkey into one. (One spreadsheet
   contained responses from three different "Email Collectors", one for
   each section surveyed.)  `Q27GPA` contains the answer to Question
@@ -127,7 +138,9 @@ In order to analyze the Likert data, we have to tell R which cells
 contain what, set the levels in the right order, and rename the
 columns so they are labelled with the question text instead of the
 generic `Q1` etc. We'll begin with the teaching evaluation data. The
-code is in `teachingevals.R`. Open that file in RStudio.  You can run
+code is in 
+[`teachingevals.R`](https://github.com/rzach/olpsurveys/blob/master/teachingeval.R).
+Open that file in RStudio.  You can run
 individual lines from that file, or selections, by highlighting the
 commands you want to run and then clicking on the "run" button.
 
@@ -218,7 +231,8 @@ in the order of the questions, you need `ordered=FALSE` or else it'll
 be ordered alphabetically. Leave those out and you get it sorted by
 level of agreement. You can of course change the colors to suit.
 
-In `textbooksurvey.R` we do much of the same stuff, except for the
+In [`textbooksurvey.R`](https://github.com/rzach/olpsurveys/blob/master/textbooksurvey.R)
+we do much of the same stuff, except for the
 results of the textbook survey. Some sample differences:
 
 - Group charts for multiple questions by textbook used.
