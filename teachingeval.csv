@@ -1,0 +1,57 @@
+Respondent ID,Gender,Major,Year,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9
+1,M,Computer Science,1,Agree,Agree,Disagree,Agree,Disagree,Neutral,Disagree,,
+2,M,,,Strongly Agree,Strongly Agree,Agree,Agree,Agree,Neutral,Disagree,Agree,Neutral
+3,M,,,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Agree,Neutral,Agree,Agree
+4,F,Computer Science,2,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Agree,Strongly Disagree,Strongly Disagree,Strongly Disagree,Strongly Disagree
+5,F,Computer Science,1,Neutral,Agree,Agree,Strongly Agree,Agree,Neutral,Agree,Neutral,Neutral
+6,M,Computer Science,1,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Neutral,Neutral,Strongly Agree,Neutral,Neutral
+7,M,,,Agree,Agree,Neutral,Strongly Agree,Neutral,Neutral,Neutral,Agree,Agree
+8,F,Computer Science,1,Neutral,Neutral,Disagree,Agree,Neutral,Neutral,Neutral,Disagree,Strongly Disagree
+9,M,,,Agree,Neutral,Agree,Agree,Neutral,Neutral,Disagree,Neutral,Disagree
+10,M,,,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral,Neutral
+11,M,,3,Agree,Strongly Agree,Agree,Neutral,Agree,Disagree,Agree,Neutral,Agree
+12,M,Chemistry,1,Strongly Agree,Strongly Agree,Strongly Agree,Agree,Strongly Agree,Agree,Neutral,Agree,Neutral
+13,M,,,Neutral,Agree,Neutral,Agree,Agree,Neutral,Agree,Disagree,Disagree
+14,M,Computer Science,1,Agree,Strongly Agree,Agree,Agree,Disagree,Neutral,Neutral,Agree,Neutral
+15,M,Computer Science,3,Agree,Agree,Neutral,Agree,Neutral,Neutral,Strongly Agree,Neutral,Neutral
+16,M,,,Agree,Neutral,Agree,Neutral,Agree,Agree,Agree,Agree,Agree
+17,F,Computer Science,1,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Agree,Agree,Strongly Agree,Strongly Agree,Strongly Agree
+18,F,Neuroscience,1,Agree,Agree,Agree,Strongly Agree,Agree,Disagree,Agree,Disagree,Disagree
+19,F,,1,Strongly Agree,Strongly Agree,Agree,Strongly Agree,Neutral,Neutral,Agree,Disagree,Disagree
+20,M,Computer Science,1,Strongly Agree,Agree,Neutral,Agree,Neutral,Neutral,Agree,Neutral,Disagree
+21,M,Neuroscience,2,Disagree,Agree,Neutral,Strongly Disagree,Agree,Neutral,Strongly Agree,Strongly Disagree,Strongly Disagree
+22,F,Neuroscience,2,Strongly Disagree,Strongly Disagree,Strongly Disagree,Strongly Agree,Strongly Disagree,Strongly Disagree,Strongly Agree,Strongly Disagree,Strongly Disagree
+23,M,,,Agree,Agree,Disagree,Strongly Agree,Neutral,Neutral,Agree,Neutral,Disagree
+24,M,,1,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Agree,Agree
+25,F,Computer Science,,Agree,Agree,Agree,Strongly Agree,Agree,Neutral,Agree,Neutral,Neutral
+26,M,Computer Science,1,Disagree,Agree,Strongly Disagree,Agree,Strongly Disagree,Disagree,Disagree,Strongly Disagree,Strongly Disagree
+27,M,,1,Agree,Agree,Neutral,Strongly Agree,Neutral,Agree,Strongly Agree,Neutral,Strongly Disagree
+28,F,Philosophy,3,Strongly Agree,Strongly Agree,Disagree,Agree,Strongly Disagree,Neutral,Strongly Agree,Strongly Disagree,Neutral
+29,M,,,Agree,Agree,Agree,Agree,Agree,Agree,Agree,Strongly Disagree,Neutral
+30,M,,,Agree,Agree,Strongly Agree,Strongly Agree,Agree,Neutral,Neutral,Agree,Neutral
+31,M,Computer Science,1,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Neutral,Neutral,Strongly Agree,Strongly Agree
+32,M,Computer Science,1,Agree,Agree,Agree,Strongly Agree,Agree,Neutral,Neutral,Neutral,Agree
+33,F,,2,Strongly Agree,Strongly Agree,Agree,Agree,Neutral,Agree,Strongly Agree,Strongly Disagree,Strongly Agree
+34,M,Computer Science,1,Strongly Agree,Strongly Agree,Strongly Disagree,Strongly Agree,Neutral,Agree,Disagree,Neutral,Neutral
+35,M,,2,Agree,Neutral,Neutral,Agree,Neutral,Neutral,Agree,Neutral,Neutral
+36,M,,1,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Agree,Neutral,Neutral,Agree,Agree
+37,F,Philosophy,3,Neutral,Agree,Neutral,Strongly Agree,Neutral,Disagree,Agree,Strongly Disagree,Strongly Disagree
+38,M,Physics,2,Neutral,Agree,Disagree,Disagree,Disagree,Neutral,Strongly Agree,Neutral,Neutral
+39,F,Computer Science,1,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Agree,Disagree,Agree,Agree,Agree
+40,M,,1,Agree,Agree,Neutral,Agree,Agree,Disagree,Agree,Agree,Agree
+41,M,,,Strongly Agree,Strongly Agree,Agree,Strongly Agree,Neutral,Neutral,Disagree,Strongly Agree,Agree
+42,M,,,Agree,Strongly Agree,Disagree,Agree,Disagree,Agree,Agree,Agree,Neutral
+43,M,Pure Mathematics,1,Strongly Agree,Strongly Agree,Neutral,Strongly Agree,Agree,Agree,Neutral,Strongly Agree,Strongly Agree
+44,M,Computer Science,1,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Disagree,Strongly Agree,Agree,Neutral
+45,F,Psychology,1,Strongly Agree,Strongly Agree,Agree,Agree,Neutral,Disagree,Strongly Agree,Agree,Neutral
+46,M,,,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Strongly Agree,Disagree,Strongly Agree,Strongly Agree,Strongly Agree
+47,M,,1,Agree,Strongly Agree,Disagree,Strongly Agree,Agree,Disagree,Neutral,Disagree,Disagree
+48,M,,,Agree,Agree,Neutral,Strongly Agree,Neutral,Strongly Agree,Neutral,Neutral,Neutral
+49,M,,,Strongly Agree,Neutral,Neutral,Agree,Neutral,Neutral,Agree,Neutral,Neutral
+50,M,Computer Science,1,Disagree,Agree,Disagree,Agree,Disagree,Neutral,Strongly Agree,Neutral,Disagree
+51,M,,,Strongly Agree,Strongly Agree,Agree,Strongly Agree,Neutral,Neutral,Strongly Agree,Neutral,Neutral
+52,M,,2,Agree,Agree,Agree,Strongly Agree,Agree,Neutral,Agree,Agree,Neutral
+53,M,,2,Strongly Agree,Strongly Agree,Strongly Disagree,Agree,Disagree,Disagree,Agree,Disagree,Disagree
+54,F,Pure Mathematics,3,Strongly Agree,Strongly Agree,Strongly Disagree,Agree,Strongly Disagree,Agree,Agree,Strongly Disagree,Strongly Disagree
+55,F,Philosophy,1,Strongly Agree,Strongly Agree,Neutral,Strongly Agree,Neutral,Agree,Disagree,Strongly Disagree,Disagree
+56,M,,1,Agree,Strongly Agree,Neutral,Strongly Agree,Neutral,Neutral,Strongly Disagree,Strongly Disagree,Strongly Disagree
