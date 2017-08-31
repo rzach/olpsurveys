@@ -10,7 +10,7 @@ materials and interventions.  To evaluate the textbooks, we ran a
 in the courses using the textbooks, and in a number of other
 courses that used commercial textbooks. These surveys were administered
 through SurveyMonkey. To evaluate the teaching interventions, we
-desiged a special 
+designed a special 
 [course evaluation instrument](https://github.com/rzach/olpsurveys/blob/master/instruments/teaching-eval-form.pdf) 
 that included a number
 of general questions with Likert responses. The evaluation was done on
@@ -235,11 +235,10 @@ In [`textbooksurvey.R`](https://github.com/rzach/olpsurveys/blob/master/textbook
 we do much of the same stuff, except for the
 results of the textbook survey. Some sample differences:
 
-- Group charts for multiple questions by textbook used.
+Here's how to group charts for multiple questions by textbook used:
 ```
 lUseByText <- likert(items=survey[,27:31,drop=FALSE],
-                   grouping=survey$Text)
-
+                 grouping=survey$Text)
 plot(lUseByText, 
   ordered=TRUE,
   group.order=c('SLC','BBJ','ForallX','Chellas','Goldfarb'),
@@ -248,9 +247,8 @@ plot(lUseByText,
   ggtitle("Textbook Use Patterns")
 ```
 
-- Plot a bar chart for a scaled question, but without centering the bars.
+To plot a bar chart for a scaled question, but without centering the bars, use `centered=FALSE`:
 ```
-# analyze a single question, say Q5
 lQ5byText <- likert(items=survey[,26,drop=FALSE],
                    grouping=survey$Text)
 plot(lQ5byText, 
@@ -264,10 +262,10 @@ plot(lQ5byText,
 
 ## Plotting Bar Charts for Multiple-Answer Questions
 
-Some of the questions in the textbook survey allowed students to check multiple answers. We
-want those plotted with a simple bar chart, grouped by, say, the
-textbook used. To do this, we first have to the data for that. First,
-we extract the responses into a new table.
+Some of the questions in the textbook survey allowed students to check
+multiple answers. We want those plotted with a simple bar chart,
+grouped by, say, the textbook used. To do this, we first have to the
+data for that. First, we extract the responses into a new table.
 ```
 Q1 <- survey[,c(6,7:13)]
 ```
