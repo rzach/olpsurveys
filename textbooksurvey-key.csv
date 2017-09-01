@@ -1,0 +1,133 @@
+Q1,How do you access the textbook?
+Q2,"If you use the text in electronic form, what is your preferred reader software?"
+Q3,"When using the text in hardcopy, do you ..."
+Q4,When using the text in electronic form do you....
+Q5,How often do you consult the textbook?
+Q6,Do you read the text in preparation for lectures?
+Q7,Do you review the text right after the material was covered in lectures?
+Q8,Do you consult the text during lectures?
+Q9,Do you read the text in preparation for exams?
+Q10,Do you consult the text when working on homework problems?
+Q11,How well placed are the figures in relation to the material they discuss?
+Q12,How much do figures and diagrams help you understand the text?
+Q13,How well are examples used to explain the material?
+Q14,How adequate is the number of exercises/problems?
+Q15,Is the text well-organized?
+Q16,Do the explanations provide enough detail?
+Q17,How engaging/interesting is the writing?
+Q18,How understandable/clear is the writing?
+Q19,What do you like about the text?
+Q20,What do you dislike about the text?
+Q21,How much money would you be happy to spend on a textbook for this course?
+Q22,How much did the cost of the textbook influence your decision to buy it?
+Q23,Is the price of the textbook too high for the amount of learning support it provides?
+Q24,What is your gender identity?
+Q25,What is your current year in university?
+Q26,"What is your major? If you have not declared a major, please check all subjects that you are considering."
+Q27,"What final grade do you expect to receive in this course? (Use ""W"" if you have withdrawn from the course or plan to.)"
+,
+Q1R1,I have bought my own hardcopy of the textbook
+Q1R2,I have bought my own electronic (eBook) version of the textbook
+Q1R3,"I have a hardcopy of the textbook, but did not buy it myself"
+Q1R4,"I have an electronic version of the textbook, but did not buy it myself"
+Q1R5,I borrow a copy of the text when I need it
+Q1R6,I use the text in the library
+Q1R7,I do not have or use the text at all
+,
+Q3R1,Underline or highlight text
+Q3R2,Make notes in the text
+Q3R3,"Make notes separately, not in the text"
+Q3R4,Use bookmarks or flags to highlight places in the text
+Q3R5,I don't use the text in hardcopy
+,
+Q4R1,Underline or highlight text
+Q4R2,Make notes in the text
+Q4R3,"Make notes separately, not in the text"
+Q4R4,Use bookmarks or flags to highlight places in the text
+Q4R5,Print portions of the text
+Q4R6,I don't use the text in electronic fom
+,
+Q5,
+1,Never
+2,Rarely
+3,Once every couple of months
+4,Once or twice a month
+5,Once a week
+6,Several times a week
+,
+Q6-Q10,
+1,1 (Never)
+2,2
+3,3
+4,4
+5,5 (Always)
+,
+Q11,
+1,1 (Not well at all)
+2,2
+3,3
+4,4
+5,5 (Very well)
+,
+Q12,
+1,1 (Not at all)
+2,2
+3,3
+4,4
+5,5 (Very much)
+"Q13-Q16, Q23",
+1,1 (Not at all)
+2,2
+3,3
+4,4
+5,5 (Very much so)
+,
+Q17,
+1,1 (Very boring)
+2,2
+3,3
+4,4
+5,5 (Very engaging)
+,
+Q18,
+1,1 (Not clear at all)
+2,2
+3,3
+4,4
+5,5 (Very clear)
+,
+Q21,
+1,0
+2,Under 20$
+3,Between 20 and 50$
+4,Between 50 and 100$
+5,Between 100 and 150$
+6,More than 150$
+,
+Q22,
+1,1 (No influence at all)
+2,2
+3,3
+4,4
+5,5 (A major factor)
+,
+Q24,
+1,Man
+2,Woman
+3,Other
+,
+Q25,
+1,First Year
+2,Second year
+3,Third year
+4,Fourth year
+5,Other
+,
+Q26R1,Mathematics
+Q26R2,Computer Science
+Q26R3,Physics
+Q26R4,Philosophy
+Q26R5,Engineering
+Q26R6,Neuroscience 
+Q26R7,Other
+Q26R8,Other (please specify)
