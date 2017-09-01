@@ -95,7 +95,7 @@ survey <- rename(survey, c(
   Q4R3="Make notes separately, not in the text",
   Q4R4="Use bookmarks or flags to highlight places in the text",
   Q4R5="Print portions of the text",
-  Q4R6="I don't use the text in electronic fom",
+  Q4R6="I don't use the text in electronic form",
   Q5="05.	How often do you consult the textbook?",
   Q6="06.	Do you read the text in preparation for lectures?",
   Q7="07.	Do you review the text right after the material was covered in lectures?",
@@ -122,14 +122,20 @@ survey <- rename(survey, c(
 
 # Likert plots
 
+# color palettes
+
+fivecols <- c('darkred', 'darkorange', 'palegoldenrod','greenyellow','darkgreen')
+sixcols <- c('darkred','darkorange', 'gold', 'palegoldenrod','greenyellow','darkgreen')
+alltexts <- c('SLC','BBJ','ForallX','Chellas','Goldfarb')
+
 # plot Q6-10, textbook use pattern questions
 lUseByText <- likert(items=survey[,27:31,drop=FALSE],
                    grouping=survey$Text)
 
 plot(lUseByText, 
   ordered=TRUE,
-  group.order=c('SLC','BBJ','ForallX','Chellas','Goldfarb'),
-  colors=c('darkred', 'darkorange', 'palegoldenrod','greenyellow','darkgreen')
+  group.order=alltexts,
+  colors=fivecols
   ) + 
   ggtitle("Textbook Use Patterns")
 
@@ -139,8 +145,8 @@ lQualityByText <- likert(items=survey[,c(32:39,45),drop=FALSE],
 
 plot(lQualityByText, 
   ordered=FALSE,
-  group.order=c('SLC','BBJ','ForallX','Chellas','Goldfarb'),
-  colors=c('darkred', 'darkorange', 'palegoldenrod','greenyellow','darkgreen')
+  group.order=alltexts,
+  colors=fivecols
   ) + 
   ggtitle("Textbook Quality")
 
@@ -148,7 +154,7 @@ plot(lQualityByText,
 plot(lQualityByText, 
   ordered=FALSE,
   group.order=c('ForallX','Chellas','Goldfarb'),
-  colors=c('darkred', 'darkorange', 'palegoldenrod','greenyellow','darkgreen')
+  colors=fivecols
   ) + 
   ggtitle("Textbook Quality")
 
@@ -161,8 +167,8 @@ lQ17byText <- likert(items=survey[,38,drop=FALSE],
 
 plot(lQ17byText, 
      ordered=TRUE,
-     group.order=c('SLC','BBJ','ForallX','Chellas','Goldfarb'),
-     colors=c('darkred','darkorange', 'palegoldenrod','greenyellow','darkgreen')
+     group.order=alltexts,
+     colors=fivecols
   ) + 
   ggtitle("Textbook Engagement")
 
@@ -173,10 +179,31 @@ lQ5byText <- likert(items=survey[,26,drop=FALSE],
 plot(lQ5byText, 
      ordered=TRUE,
      centered= FALSE,
-     group.order=c('SLC','BBJ','ForallX','Chellas','Goldfarb'),
-     colors=c('darkred','darkorange', 'gold', 'palegoldenrod','greenyellow','darkgreen')
+     group.order=alltexts,
+     colors=sixcols
   ) + 
   ggtitle("Textbook Use Frequency")
+
+lQ21byText <- likert(items=survey[,42,drop=FALSE],
+                    grouping=survey$Text)
+plot(lQ21byText, 
+     ordered=TRUE,
+     centered= FALSE,
+     group.order=alltexts,
+     colors=sixcols
+  ) + 
+  ggtitle("Textbook Cost Expectation")
+
+lQ22byText <- likert(items=survey[,43,drop=FALSE],
+                     grouping=survey$Text)
+plot(lQ22byText, 
+     ordered=TRUE,
+     centered= FALSE,
+     group.order=alltexts,
+     colors=fivecols
+  ) + 
+  ggtitle("Importance of Textbook Cost")
+
 
 # bar charts for multiple answer questions
 
@@ -199,4 +226,39 @@ ggplot() +
   ggtitle("01. How do you access the textbook?") +
   theme(legend.position = "bottom",
         axis.title.x = element_blank()) +
-  guides(fill=guide_legend(title=NULL,ncol=1))
+  guides(fill=guide_legend(title=NULL,ncol=1)) +
+  scale_fill_brewer(palette="Dark2")
+
+# plot responses for Text and Q3
+Q3 <- survey[,c(6,15:18)]
+Q3 <- ddply(Q3,.(Text),numcolwise(sum))
+Q3 <- melt(Q3,id.var="Text")
+
+ggplot() + 
+  geom_bar(
+    aes(x=Text,fill=variable,y=value),
+    data=Q3,
+    stat="identity") + 
+  coord_flip() +
+  ggtitle("03. When using the text in hardcopy, do you ...") +
+  theme(legend.position = "bottom",
+        axis.title.x = element_blank()) +
+  guides(fill=guide_legend(title=NULL,ncol=1)) +
+  scale_fill_brewer(palette="Dark2")
+
+# plot responses for Text and Q4
+Q4 <- survey[,c(6,20:24)]
+Q4 <- ddply(Q4,.(Text),numcolwise(sum))
+Q4 <- melt(Q4,id.var="Text")
+
+ggplot() + 
+  geom_bar(
+    aes(x=Text,fill=variable,y=value),
+    data=Q4,
+    stat="identity") + 
+  coord_flip() +
+  ggtitle("04. When using the text in electronic form, do you....") +
+  theme(legend.position = "bottom",
+        axis.title.x = element_blank()) +
+  guides(fill=guide_legend(title=NULL,ncol=1)) +
+  scale_fill_brewer(palette="Dark2")
