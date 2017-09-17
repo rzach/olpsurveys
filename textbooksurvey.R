@@ -247,18 +247,26 @@ ggplot() +
   scale_fill_brewer(palette="Dark2")
 
 # plot responses for Text and Q4
-Q4 <- survey[,c(6,20:24)]
-Q4 <- ddply(Q4,.(Text),numcolwise(sum))
+
+# load responses for question 4 into df Q4
+Q4 <- survey[,c(6,20:25)]
+
+# aggregate by Text, computing means = percent respondents who checked box
+Q4 <- aggregate( . ~ Text, data=Q4, mean)
+
+# make table long form for ggplot
 Q4 <- melt(Q4,id.var="Text")
 
 ggplot() + 
   geom_bar(
-    aes(x=Text,fill=variable,y=value),
+    aes(x=variable,fill=Text,y=value),
     data=Q4,
-    stat="identity") + 
+    stat="identity", position="dodge") + 
   coord_flip() +
   ggtitle("04. When using the text in electronic form, do you....") +
   theme(legend.position = "bottom",
-        axis.title.x = element_blank()) +
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank()) +
   guides(fill=guide_legend(title=NULL,ncol=1)) +
-  scale_fill_brewer(palette="Dark2")
+  scale_fill_brewer(palette="Dark2") +
+  scale_y_continuous(labels = scales::percent)
